@@ -2,10 +2,10 @@
 
 /**
  * main - Entry point
- * 
+ *
  * function - prints a string output
- * 
- * return - exit point
+ *
+ * Return : exit point
 */
 int main(void)
 {
