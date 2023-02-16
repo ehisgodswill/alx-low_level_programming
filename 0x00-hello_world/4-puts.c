@@ -5,7 +5,7 @@
  *
  * function - prints a string output
  *
- * Return : exit point
+ * Return: exit point
 */
 int main(void)
 {
