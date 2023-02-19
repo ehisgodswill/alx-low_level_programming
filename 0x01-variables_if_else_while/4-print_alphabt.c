@@ -10,10 +10,17 @@
 
 int main(void)
 {
-	int n;
+	char low, e, q;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	
+	e = 'e';
+	q = 'q';
+
+	for (low = 'a'; low <= 'z'; low++)
+	{
+		if (low != e && low != q)
+			putchar(low);
+	}
+	putchar('\n');
+
 	return (0);
 }

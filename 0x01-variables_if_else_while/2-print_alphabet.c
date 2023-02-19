@@ -10,10 +10,10 @@
 
 int main(void)
 {
-	int n;
+	char low;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	
+	for (low = 'a'; low <= 'z'; low++)
+		putchar(low);
+	putchar('\n');
 	return (0);
 }
