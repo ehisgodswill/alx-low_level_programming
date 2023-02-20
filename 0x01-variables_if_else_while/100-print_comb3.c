@@ -10,10 +10,27 @@
 
 int main(void)
 {
-	int n;
+	int n, o;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	
+	for (n = '0'; n <= '9'; n++)
+	{
+		if (n != o)
+		{
+			for (o = n + 1; o <= '9'; o++)
+			{
+				putchar(n);
+				putchar(o);
+				if(n == '8' && o == '9')
+					continue;
+				else
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+		}
+	}
+	putchar('\n');
+
 	return (0);
 }
