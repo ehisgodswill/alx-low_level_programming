@@ -10,10 +10,11 @@
 
 int main(void)
 {
-	int n;
+	int i;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	
+	for (i = 0; i < 10; i++)
+		printf("%d", i);
+	printf("\n");
+
 	return (0);
 }

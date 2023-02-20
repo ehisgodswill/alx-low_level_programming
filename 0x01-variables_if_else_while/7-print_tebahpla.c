@@ -12,8 +12,9 @@ int main(void)
 {
 	int n;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	
+	for (n = 'z'; n >= 'a'; n--)
+		putchar(n);
+	putchar('\n')
+
 	return (0);
 }
