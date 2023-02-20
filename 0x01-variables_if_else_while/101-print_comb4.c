@@ -10,10 +10,32 @@
 
 int main(void)
 {
-	int n;
+	int a, b, c;
+	for (a = '0'; a <= '9'; a++)
+	{
+		if (a != b)
+		{
+			for (b = a + 1; b <= '9'; b++)
+			{
+				if (b != c)
+				{
+					for (c = b + 1; c <= '9'; c++)
+					{
+						putchar(a);
+						putchar(b);
+						putchar(c);
+						if (a == 7; b == 8; c == 9 )
+							continue;
+						else
+						{
+							putchar(',');
+							putchar(' ');
+						}
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	
+					}
+				}
+			}
+		}
+	}
 	return (0);
 }
