@@ -11,6 +11,7 @@
 int main(void)
 {
 	int a, b, c;
+
 	for (a = '0'; a <= '9'; a++)
 	{
 		for (b = a + 1; b <= '9'; b++)
