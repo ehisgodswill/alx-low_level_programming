@@ -1,19 +1,24 @@
-#include<stdio.h>
+#include <stdio.h>
 #include "main.h"
+
 /**
- * main- Entry
+ * main- entry point
  *
- * Description: Prints a string using putchar
- * Return: exit
+ * Description: print a string
+ *
+ * Return: return an integer
 */
 
 int main(void)
 {
-	char j[8] = "_putchar";
+	char word[8] = "_putchar";\
 	int i;
 
 	for (i = 0; i < 8; i++)
-		_putchar(j[i]);
+	{
+		_putchar(word[i]);
+	}
 	_putchar('\n');
-	return 0;
+
+	return (0)
 }
