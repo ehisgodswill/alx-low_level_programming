@@ -3,7 +3,7 @@
 /**
  * main- entry point
  *
- * DescripTIon: prints out the alphabeth in lower case
+ * Description: prints out the alphabeth in lower case
  *
  * Return: 0 success
 */
