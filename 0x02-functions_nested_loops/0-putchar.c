@@ -2,8 +2,9 @@
 #include "main.h"
 
 /**
- * main: Entry
+ * main- Entry
  *
+ * Description: Prints a string using putchar
  * Return: exit
 */
 
