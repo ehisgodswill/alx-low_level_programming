@@ -11,16 +11,16 @@ int main(void)
 	int i;
 	double p = 1, q = 2, r;
 
-	printf("%g, %g, ", p, q);
+	printf("%.0f, %.0f, ", p, q);
 	for (i = 2; i < 98; i++)
 	{
 		r = p + q;
 		p = q;
 		q = r;
 		if (i == 97)
-			printf("%g\n", r);
+			printf("%.0f\n", r);
 		else
-			printf("%g, ", r);
+			printf("%.0f, ", r);
 	}
 
 	return (0);
