@@ -11,7 +11,7 @@ int main(void)
 	int i;
 	long int p = 1, q = 2, r;
 
-	printf("%d, %d, ", p, q);
+	printf("%ld, %ld, ", p, q);
 	for (i = 2; i < 98; i++)
 	{
 		r = p + q;
