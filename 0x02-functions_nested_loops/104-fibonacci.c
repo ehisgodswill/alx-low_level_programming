@@ -17,7 +17,6 @@ int main(void)
 		r = p + q;
 		p = q;
 		q = r;
-		if (r >= )
 		if (i == 97)
 			printf("%f\n", r);
 		else
