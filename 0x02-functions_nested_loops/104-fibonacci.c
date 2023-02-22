@@ -16,7 +16,7 @@ int main(void)
 	fibonacci[1] = 2;
 	*/
 	printf("%d, %d, ", j, k);
-	for (i = 0; i < 98; i++)
+	for (i = 2; i < 98; i++)
 	{
 		r = j + k;
 		j = k;
