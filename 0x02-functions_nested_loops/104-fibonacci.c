@@ -8,23 +8,19 @@
 
 int main(void)
 {
-	int i, j = 1, k = 2, r;
-	/*
-	long int fibonacci[50];
+	int i;
+	long int p = 1, q = 2, r;
 
-	fibonacci[0] = 1;
-	fibonacci[1] = 2;
-	*/
-	printf("%d, %d, ", j, k);
+	printf("%d, %d, ", p, q);
 	for (i = 2; i < 98; i++)
 	{
-		r = j + k;
-		j = k;
-		k = r;
+		r = p + q;
+		p = q;
+		q = r;
 		if (i == 97)
-			printf("%d\n", r);
+			printf("%ld\n", r);
 		else
-			printf("%d, ", r);
+			printf("%ld, ", r);
 	}
 
 	return (0);
