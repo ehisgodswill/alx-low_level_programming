@@ -18,9 +18,9 @@ int main(void)
 		p = q;
 		q = r;
 		if (i == 97)
-			printf("%.1f\n", r);
+			printf("%.0f\n", r);
 		else
-			printf("%.1f, ", r);
+			printf("%.0f, ", r);
 	}
 
 	return (0);
