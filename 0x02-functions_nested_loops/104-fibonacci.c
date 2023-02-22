@@ -9,18 +9,18 @@
 int main(void)
 {
 	int i;
-	long int p = 1, q = 2, r;
+	unsigned long int p = 1, q = 2, r;
 
-	printf("%ld, %ld, ", p, q);
+	printf("%lu, %lu, ", p, q);
 	for (i = 2; i < 98; i++)
 	{
 		r = p + q;
 		p = q;
 		q = r;
 		if (i == 97)
-			printf("%ld\n", r);
+			printf("%lu\n", r);
 		else
-			printf("%ld, ", r);
+			printf("%lu, ", r);
 	}
 
 	return (0);
