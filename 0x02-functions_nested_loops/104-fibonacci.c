@@ -9,9 +9,9 @@
 int main(void)
 {
 	int i;
-	float int p = 1, q = 2, r;
+	float p = 1, q = 2, r;
 
-	printf("%lu, %lu, ", p, q);
+	printf("%f, %f, ", p, q);
 	for (i = 2; i < 98; i++)
 	{
 		r = p + q;
