@@ -2,7 +2,7 @@
 /**
  * main - Entry point
  * Return: Always 0 success 
- */
+*/
 int main(void)
 {
 	unsigned long int i = 3, x = 612852475143;
