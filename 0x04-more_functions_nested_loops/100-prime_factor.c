@@ -5,13 +5,13 @@
  */
 int main(void)
 {
-	unsigned long int i = 3, n = 612852475143;
+	unsigned long int i = 3, x = 612852475143;
 
 	for (; i < 12057; i += 2)
 	{
-		while (n % i == 0 && n != i)
-			n /= i;
+		while (x % i == 0 && x != i)
+			x /= i;
 	}
-	printf("%lu\n", n);
+	printf("%lu\n", x);
 	return (0);
 }
