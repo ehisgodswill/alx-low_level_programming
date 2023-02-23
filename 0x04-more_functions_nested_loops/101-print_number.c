@@ -36,6 +36,3 @@ void print_integer(int m)
 		}
 	}
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
