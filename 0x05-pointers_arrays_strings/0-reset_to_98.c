@@ -2,6 +2,7 @@
 
 /**
  * reset_to_98 - resets a variable to 98
+ * Description: check above
  * Return: nothing
 */
 
