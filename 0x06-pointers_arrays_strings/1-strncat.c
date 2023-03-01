@@ -10,7 +10,7 @@
 char *_strncat(char *dest, char *src, int n)
 {
 	int srclen = 0, i = 0;
-	char *start = src;
+	char *temp = dest, *start = src;
 
 	while (*src)
 	{
@@ -30,5 +30,5 @@ char *_strncat(char *dest, char *src, int n)
 		*dest++ = *src++;
 
 	*dest = '\0';
-	return (dest);
+	return (temp);
 }
