@@ -4,7 +4,7 @@
  * _strncat - similar to strcat function
  * @dest: char destination
  * @src: source
- * @N: number
+ * @n: number
  * Return: character
 */
 char *_strncat(char *dest, char *src, int n)
