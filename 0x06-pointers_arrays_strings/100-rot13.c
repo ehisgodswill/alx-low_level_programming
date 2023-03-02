@@ -22,7 +22,7 @@ char *rot13(char *s)
 				continue;
 			}
 			s[i++] -= 13;
-			
+
 		}
 		i++;
 	}
