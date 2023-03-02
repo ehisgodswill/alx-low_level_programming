@@ -17,5 +17,5 @@ int r = 0, i = 0;
 		r = s1[i] - s2[i];
 		i++;
 	}
-	return(r);
+	return (r);
 }
