@@ -2,7 +2,7 @@
 
 /**
  * *cap_string - function
- * @str: string
+ * @s: string
  * Return: string
 */
 char *cap_string(char *s)
