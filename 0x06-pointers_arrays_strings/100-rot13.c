@@ -1,8 +1,9 @@
 #include "main.h"
 
+
 /**
- * *rot13 - a function that encodes a string by rotating 13.
- * @s: an input string to encode
+ * rot13 -  a function that encodes a string using rot13.
+ * @s: An input string to encode using rot13
  * Return: An encode string
  */
 char *rot13(char *s)
@@ -23,6 +24,5 @@ char *rot13(char *s)
 		}
 		i++;
 	}
-
 	return (s);
 }
