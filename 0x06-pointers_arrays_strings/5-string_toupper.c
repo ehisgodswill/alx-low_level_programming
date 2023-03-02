@@ -12,8 +12,8 @@ char *string_toupper(char *str)
 	{
 		for (int c = 'a'; c <= 'z'; c++)
 		{
-			if (str == c)
-				str -= 32;
+			if (str[0] == c)
+				str[0] -= 32;
 		}
 		str++;
 	}
