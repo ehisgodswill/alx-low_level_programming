@@ -1,5 +1,6 @@
-#include "main.h"
 #include <stdio.h>
+#include "main.h"
+
 /**
  * _strchr - a function that locates a character in a string.
  * @s: an input string to search in
@@ -11,9 +12,7 @@ char *_strchr(char *s, char c)
 	while (*s)
 	{
 		if (s[0] == c)
-		{
 			return (s);
-		}
 		s++;
 	}
 	return (NULL);
