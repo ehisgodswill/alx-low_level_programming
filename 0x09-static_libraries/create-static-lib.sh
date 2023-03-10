@@ -20,4 +20,5 @@ gcc -Wall -pedantic -Werror -Wextra -c \
 '../0x07-pointers_arrays_strings/3-strspn.c' \
 '../0x07-pointers_arrays_strings/4-strpbrk.c' \
 '../0x07-pointers_arrays_strings/5-strstr.c' ;
-ar -rc liball.a *.o
+
+ar -rc libmy.a *.o
