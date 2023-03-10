@@ -10,18 +10,18 @@
  */
 int main(int argc, char **argv)
 {
-	int num, result = 0, i, n = 0;
+	int num, result = 0, n = 0;
 
 	while (++n < argc)
 	{
 		num = atoi(argv[n]);
-		if (num)
-			result += argv[n];
-		else
+		if (num == 0)
 		{
 			printf("Error\n");
 			return (1);
 		}
+		else
+			result += argv[n];
 	}
 	printf("%d\n", result);
 	return (0);
