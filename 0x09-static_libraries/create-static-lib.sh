@@ -1,6 +1,6 @@
 #!/bin/bash
-# gcc -Wall -pedantic -Werror -Wextra -c 
-echo '../0x02-functions_nested_loops/0-putchar.c' \
+gcc -Wall -pedantic -Werror -Wextra -c \
+'../0x02-functions_nested_loops/0-putchar.c' \
 '../0x02-functions_nested_loops/3-islower.c' \
 '../0x02-functions_nested_loops/4-isalpha.c' \
 '../0x02-functions_nested_loops/6-abs.c' \
@@ -19,5 +19,5 @@ echo '../0x02-functions_nested_loops/0-putchar.c' \
 '../0x07-pointers_arrays_strings/2-strchr.c' \
 '../0x07-pointers_arrays_strings/3-strspn.c' \
 '../0x07-pointers_arrays_strings/4-strpbrk.c' \
-'../0x07-pointers_arrays_strings/5-strstr.c'
+'../0x07-pointers_arrays_strings/5-strstr.c' ;
 ar -rc liball.a *.o
