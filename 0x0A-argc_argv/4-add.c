@@ -12,10 +12,16 @@ int main(int argc, char **argv)
 {
 	int num, result = 0, i, n = 0;
 
-	while (++n <= c)
+	while (++n < argc)
 	{
-		if ((argv[n]) >)
-		result += argv[n];
+		num = atoi(argv[n]);
+		if (num)
+			result += argv[n];
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
 	printf("%d\n", result);
 	return (0);
