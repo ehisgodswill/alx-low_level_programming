@@ -9,18 +9,22 @@
  */
 int main(int argc, char **argv)
 {
-	int num, result = 0, n = 0;
+	int num, result = 0, n = 0, i;
 
 	while (++n < argc)
 	{
-		num = atoi(argv[n]);
-		if (num == 0)
+		i = 0;
+		while (argv[n][i])
 		{
-			printf("Error\n");
-			return (1);
+			if (!(isdigit(argv[n][i])))
+			{
+				printf("Error\n");
+				return (1);
+			}
+			i++
 		}
-		else
-			result += num;
+		num = atoi(argv[n]);
+		result += num;
 	}
 	printf("%d\n", result);
 	return (0);
