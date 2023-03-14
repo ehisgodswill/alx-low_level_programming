@@ -25,7 +25,8 @@ char *str_concat(char *s1, char *s2)
 
 	while (k < i)
 		newstr[k++] = *s1++;
-	while (k <= (i + j))
+	while (k < (i + j))
 		newstr[k++] = *s2++;
+	newstr[++k] = '\0';
 	return (newstr);
 }
