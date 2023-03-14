@@ -12,10 +12,10 @@ char *str_concat(char *s1, char *s2)
 	char *newstr;
 	int k = 0, i = 0, j = 0;
 
-	while (*s1++)
+	while (s1 && *s1++)
 		i++;
 	s1 = s1 - i - 1;
-	while (*s2++)
+	while (s2 && *s2++)
 		j++;
 	s2 = s2 - j - 1;
 
