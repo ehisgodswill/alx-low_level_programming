@@ -22,12 +22,10 @@ char *str_concat(char *s1, char *s2)
 	newstr = malloc((i + j + 1) * sizeof(char));
 	if (newstr == NULL)
 		return (NULL);
-	else
-	{
-		while (k < i)
-			newstr[k++] = *s1++;
-		while (k <= (i + j))
-			newstr[k++] = *s2++;
-		return (newstr);
-	}
+
+	while (k < i)
+		newstr[k++] = *s1++;
+	while (k <= (i + j))
+		newstr[k++] = *s2++;
+	return (newstr);
 }
