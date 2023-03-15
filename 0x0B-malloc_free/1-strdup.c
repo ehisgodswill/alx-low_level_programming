@@ -25,6 +25,6 @@ char *_strdup(char *str)
 	while (i < size)
 		newstr[i++] = *str++;
 
-	newstr{i} = '\0';
+	newstr[i] = '\0';
 	return (newstr);
 }
