@@ -22,10 +22,9 @@ char *_strdup(char *str)
 
 	if (newstr == NULL)
 		return (NULL);
-	else
-	{
-		while (i < size)
-			newstr[i++] = *str++;
-		return (newstr);
-	}
+	while (i < size)
+		newstr[i++] = *str++;
+
+	newstr{i} = '\0';
+	return (newstr);
 }
