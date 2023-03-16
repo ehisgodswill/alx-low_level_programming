@@ -35,7 +35,7 @@ char **strtow(char *str)
 			array[k] = malloc((len + 1) * sizeof(char));
 			if (array[k] == NULL)
 			{
-				for (k = k - 1; k >= 0; k++)
+				while (--k >= 0)
 					free(array[k]);
 				free(array);
 				return (NULL);
