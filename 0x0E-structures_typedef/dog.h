@@ -1,5 +1,3 @@
-#ifndef _DOG_H_
-#define _DOG_H_
 
 /**
  * struct dog - structure for a basic dog
@@ -14,5 +12,3 @@ struct dog
 	char *name;
 	char *owner;
 };
-typedef struct dog dog;
-#endif
