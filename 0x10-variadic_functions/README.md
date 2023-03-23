@@ -6,7 +6,7 @@
 *    C - Variable Arguments
 *    Functions with Variable Argument Lists in C using va_list
 *    Variadic Functions
-*    Const Keyword 
+*    Const Keyword
 
 ## Learning Objectives
 
