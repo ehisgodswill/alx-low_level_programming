@@ -7,7 +7,7 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned int max = sizeof(unsigned long int) * 8, flag = 0; 
+	unsigned int max = sizeof(unsigned long int) * 8, flag = 0;
 
 	if (n == 0)
 		putchar('0');
