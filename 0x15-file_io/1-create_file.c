@@ -14,16 +14,18 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fdo, fdw;
+	int fdo, fdw, len = 0;
 
 	if (filename == NULL)
 		return (-1);
 	fdo = open(filename, O_RDWR | O_CREAT | O_TRUNC, 00600);
 	if (fdo < 0)
-		return (-1);	
-	fdw = write(fdo, text_content, strlen(text_content));
+		return (-1);
+	if (text_content != NULL)
+		len = strlen(text_content);
+	fdw = write(fdo, text_content, len);
 	close(fdo);
 	if (fdw < 0)
 		return (-1);
-	return (1);	
+	return (1);
 }
