@@ -1,10 +1,3 @@
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/uio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <string.h>
-
 /**
  * create_file - A function that creates a file
  * @filename: The filename to create
