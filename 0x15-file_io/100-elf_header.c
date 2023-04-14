@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 	 * @e_shnum: a variable
 	 * @e_shstrndx: a variable
 	 *
-	 * Description: a structure gj 
+	 * Description: a structure gj
 	*/
 	struct elf_header
 	{
