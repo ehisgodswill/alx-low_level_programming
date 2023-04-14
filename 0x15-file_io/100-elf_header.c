@@ -19,6 +19,24 @@ int main(int argc, char *argv[])
 	const char *elf_class;
 	const char *elf_data;
 	const char *elf_version;
+
+	/**
+	 * struct elf_header - Struct op
+	 * @e_indent: The header identity
+	 * @e_type: a variable
+	 * @e_machine: a variable
+	 * @e_version: a variable
+	 * @e_entry: a variable
+	 * @e_phoff: a variable
+	 * @e_shoff: a variable
+	 * @e_flags: a variable
+	 * @e_ehsize: a variable
+	 * @e_phentsize: a variable
+	 * @e_phnum: a variable
+	 * @e_shentsize: a variable
+	 * @e_shnum: a variable
+	 * @e_shstrndx: a variable
+	*/
 	struct elf_header
 	{
 		unsigned char e_ident[16];
