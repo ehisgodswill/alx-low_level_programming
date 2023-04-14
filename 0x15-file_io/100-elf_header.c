@@ -57,15 +57,17 @@ int main(int argc, char *argv[])
 	(elf_header.e_ident[5] == 2) ? "1's complement, big endian" : "Unknown";
 	elf_version = (elf_header.e_version == 1) ? "1 (current)" :
 	(elf_header.e_version == 2) ? "2 (original)" : "Unknown";
-	
+
 
 	printf("ELF Header:\n");
-	printf("\t%s %02x %02x %02x %02x %02x %02x %02x %02x %02x \
-%02x %02x %02x %02x %02x %02x %02x\n","Magic Number:",
-	elf_header.e_ident[0], elf_header.e_ident[1], elf_header.e_ident[2], elf_header.e_ident[3],
-	elf_header.e_ident[4], elf_header.e_ident[5], elf_header.e_ident[6], elf_header.e_ident[7],
-	elf_header.e_ident[8], elf_header.e_ident[9], elf_header.e_ident[10], elf_header.e_ident[11],
-	elf_header.e_ident[12], elf_header.e_ident[13], elf_header.e_ident[14], elf_header.e_ident[15]);
+	printf("\tMagic\t: %02x %02x %02x %02x %02x %02x %02x %02x %02x",
+	elf_header.e_ident[0], elf_header.e_ident[1], elf_header.e_ident[2],
+	elf_header.e_ident[3], elf_header.e_ident[4], elf_header.e_ident[5],
+	elf_header.e_ident[6], elf_header.e_ident[7],elf_header.e_ident[8]);
+	printf("%02x %02x %02x %02x %02x %02x %02x\n",
+	elf_header.e_ident[9], elf_header.e_ident[10], elf_header.e_ident[11],
+	elf_header.e_ident[12], elf_header.e_ident[13], elf_header.e_ident[14],
+	elf_header.e_ident[15]);
 	printf("\t%-39s%s\n", "Class: ", elf_class);
 	printf("\t%-39s%s\n", "Data: ", elf_data);
 	printf("\t%-39s%s\n", "Version: ", elf_version);
@@ -141,7 +143,7 @@ char *get_abi(unsigned int abi)
 		case 0x12:
 			elf_osabi = "UNIX - Stratus Technologies OpenVOS";
 			break;
-		default :
+		default:
 			break;
 	}
 	return (elf_osabi);
@@ -185,7 +187,7 @@ char *get_type(unsigned int type)
 		case 0xFFFF:
 			msg = "HIPROC (Reserved inclusive range. Processor specific)";
 			break;
-		default :
+		default:
 			break;
 	}
 	return (msg);
