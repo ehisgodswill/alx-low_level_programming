@@ -22,7 +22,6 @@ int main(int argc, char *argv[])
 
 	/**
 	 * struct elf_header - Struct op
-	 * Description: a structure
 	 * @e_indent: The header identity
 	 * @e_type: a variable
 	 * @e_machine: a variable
@@ -37,6 +36,8 @@ int main(int argc, char *argv[])
 	 * @e_shentsize: a variable
 	 * @e_shnum: a variable
 	 * @e_shstrndx: a variable
+	 * 
+	 * Description: a structure
 	*/
 	struct elf_header
 	{
