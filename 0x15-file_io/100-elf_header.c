@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 
 
 	printf("ELF Header:\n");
-	printf("\tMagic\t: %02x %02x %02x %02x %02x %02x %02x %02x %02x",
+	printf("\tMagic:\t %02x %02x %02x %02x %02x %02x %02x %02x %02x ",
 	elf_header.e_ident[0], elf_header.e_ident[1], elf_header.e_ident[2],
 	elf_header.e_ident[3], elf_header.e_ident[4], elf_header.e_ident[5],
 	elf_header.e_ident[6], elf_header.e_ident[7], elf_header.e_ident[8]);
