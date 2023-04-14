@@ -2,64 +2,61 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-/**
- * main - The entry point for program to get header of ELF file
- * @argc: The number of arguments
- * @argv: The pointer to array of arguments
- * Return: 1 on success, error code on failure
- */
 char *get_type(unsigned int type);
-
 char *get_abi(unsigned int abi);
+
 /**
  * main - The entry point for program to get header of ELF file
  * @argc: The number of arguments
  * @argv: The pointer to array of arguments
  * Return: 1 on success, error code on failure
  */
-typedef struct {
-    unsigned char e_ident[16];
-    uint16_t e_type;
-    uint16_t e_machine;
-    uint32_t e_version;
-    uint64_t e_entry;
-    uint64_t e_phoff;
-    uint64_t e_shoff;
-    uint32_t e_flags;
-    uint16_t e_ehsize;
-    uint16_t e_phentsize;
-    uint16_t e_phnum;
-    uint16_t e_shentsize;
-    uint16_t e_shnum;
-    uint16_t e_shstrndx;
-} Elf64_Ehdr;
+
 int main(int argc, char *argv[])
 {
-	Elf64_Ehdr elf_header;
 	FILE *file = fopen(argv[1], "rb");
 	size_t bytes_read;
 	const char *elf_class;
 	const char *elf_data;
 	const char *elf_version;
+	struct elf_header
+	{
+		unsigned char e_ident[16];
+		uint16_t e_type;
+		uint16_t e_machine;
+		uint32_t e_version;
+		uint64_t e_entry;
+		uint64_t e_phoff;
+		uint64_t e_shoff;
+		uint32_t e_flags;
+		uint16_t e_ehsize;
+		uint16_t e_phentsize;
+		uint16_t e_phnum;
+		uint16_t e_shentsize;
+		uint16_t e_shnum;
+		uint16_t e_shstrndx;
+	} elf_header;
 
-	argc;
-	if (file == NULL) {
-        fprintf(stderr, "Failed to open file: %s\n", argv[1]);
-        exit(98);
-    }
-	bytes_read = fread(&elf_header, sizeof(Elf64_Ehdr), 1, file);
-	if (bytes_read != 1) {
+	argc += 0;
+	if (file == NULL)
+	{
+		fprintf(stderr, "Failed to open file: %s\n", argv[1]);
+		exit(98);
+	}
+	bytes_read = fread(&elf_header, sizeof(elf_header), 1, file);
+	if (bytes_read != 1)
+	{
 		printf("Failed to read ELF header\n");
 		fclose(file);
 		exit(98);
 	}
 
 	elf_class = (elf_header.e_ident[4] == 1) ? "ELF32" :
-							(elf_header.e_ident[4] == 2) ? "ELF64" : "Unknown";
-	elf_class = (elf_header.e_ident[5] == 1) ? "2's complement, little endian" :
-						   (elf_header.e_ident[5] == 2) ? "1's complement, big endian" : "Unknown";
-	elf_class = (elf_header.e_version == 1) ? "1 (current)" :
-							  (elf_header.e_version == 2) ? "2 (original)" : "Unknown";
+	(elf_header.e_ident[4] == 2) ? "ELF64" : "Unknown";
+	elf_data = (elf_header.e_ident[5] == 1) ? "2's complement, little endian" :
+	(elf_header.e_ident[5] == 2) ? "1's complement, big endian" : "Unknown";
+	elf_version = (elf_header.e_version == 1) ? "1 (current)" :
+	(elf_header.e_version == 2) ? "2 (original)" : "Unknown";
 	
 
 	printf("ELF Header:\n");
@@ -90,7 +87,7 @@ char *get_abi(unsigned int abi)
 
 	switch (abi)
 	{
-		case 0x00 :
+		case 0x00:
 			elf_osabi = "UNIX - System V";
 			break;
 		case 0x01:
@@ -159,7 +156,7 @@ char *get_type(unsigned int type)
 {
 	char *msg;
 
-	switch(type)
+	switch (type)
 	{
 		case 0x00:
 			msg = "NONE (Unknown)";
