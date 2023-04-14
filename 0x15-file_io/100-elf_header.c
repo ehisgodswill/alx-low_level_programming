@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 
 	/**
 	 * struct elf_header - Struct op
+	 * Description: a structure
 	 * @e_indent: The header identity
 	 * @e_type: a variable
 	 * @e_machine: a variable
