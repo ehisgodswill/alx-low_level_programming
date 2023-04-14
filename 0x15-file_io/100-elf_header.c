@@ -38,7 +38,11 @@ int main(int argc, char *argv[])
 	Elf64_Ehdr elf_header;
 	FILE *file = fopen(argv[1], "rb");
 	size_t bytes_read;
+	const char *elf_class;
+	const char *elf_data;
+	const char *elf_version;
 
+	argc;
 	if (file == NULL) {
         fprintf(stderr, "Failed to open file: %s\n", argv[1]);
         exit(98);
@@ -49,12 +53,12 @@ int main(int argc, char *argv[])
 		fclose(file);
 		exit(98);
 	}
-	// Extract relevant fields from the ELF header
-	const char *elf_class = (elf_header.e_ident[4] == 1) ? "ELF32" :
+
+	elf_class = (elf_header.e_ident[4] == 1) ? "ELF32" :
 							(elf_header.e_ident[4] == 2) ? "ELF64" : "Unknown";
-	const char *elf_data = (elf_header.e_ident[5] == 1) ? "2's complement, little endian" :
+	elf_class = (elf_header.e_ident[5] == 1) ? "2's complement, little endian" :
 						   (elf_header.e_ident[5] == 2) ? "1's complement, big endian" : "Unknown";
-	const char *elf_version = (elf_header.e_version == 1) ? "1 (current)" :
+	elf_class = (elf_header.e_version == 1) ? "1 (current)" :
 							  (elf_header.e_version == 2) ? "2 (original)" : "Unknown";
 	
 
@@ -82,7 +86,7 @@ int main(int argc, char *argv[])
  */
 char *get_abi(unsigned int abi)
 {
-	const char *elf_osabi;
+	char *elf_osabi;
 
 	switch (abi)
 	{
