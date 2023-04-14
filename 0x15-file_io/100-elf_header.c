@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 	printf("\t%-39s%s\n", "Version: ", elf_version);
 	printf("\t%-39s%s\n", "OS/ABI: ", get_abi(elf_header.e_ident[7]));
 	printf("\t%-39s%d\n", "ABI Version: ", elf_header.e_version);
-	printf("\t%-39s%s\n", "Type: ", get_type(elf_header.e_tyoe));
+	printf("\t%-39s%s\n", "Type: ", get_type(elf_header.e_type));
 	printf("\t%-39s%#04lx\n", "Entry point address: ", elf_header.e_entry);
 	return (1);
 }
