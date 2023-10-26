@@ -16,23 +16,16 @@ unsigned int binary_to_uint(const char *b)
 	{
 		len++;
 	}
-	f = 0;
+	f = 1;
 
 	while (--len >= 0)
 	{
-		if (b[len] == '1')
-		{
-			a += pow(2, f);
-		}
-		else if (b[len] == '0')
-		{
-		}
-		else
+		a += (b[len] - 48) * f;
+		if (b[len] != '1' && b[len] != '0')
 		{
 			return (0);
 		}
-
-		f++;
+		f *= 2;
 	}
 	return (a);
 }
