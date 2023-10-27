@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 /**
  * set_bit - set the value of a bit at a given index
  * @n: integer to get value of
