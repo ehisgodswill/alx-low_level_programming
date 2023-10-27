@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 /**
  * clear_bit - sets the value of a bit at a given index to 0
  * @n: integer to get value of
@@ -8,8 +9,8 @@
 
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (index > 64)
+	if ((index >= 64) n == NULL)
 		return (-1);
-	*n = ~(1 << index) & *n;
+	*n = ~(1UL << index) & *n;
 	return (*n);
 }
