@@ -1,5 +1,5 @@
 #include "main.h"
-#include <math.h>
+#include <unistd.h>
 
 /**
  * binary_to_uint - A function that converts binaryto integer.
