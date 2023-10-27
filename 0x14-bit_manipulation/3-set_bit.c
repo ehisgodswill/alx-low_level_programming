@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 /**
  * set_bit - set the value of a bit at a given index
  * @n: integer to get value of
@@ -9,8 +10,10 @@
 int set_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int temp = 0;
-	if (index > 64)
+
+	if ((index >= 64) || (!index) || n == NULL)
 		return (-1);
+	
 	temp = 1 << index;
 	*n |= temp;
 	return (*n);
