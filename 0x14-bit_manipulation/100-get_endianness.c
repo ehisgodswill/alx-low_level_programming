@@ -1,4 +1,4 @@
-#include main.h
+#include "main.h"
 
 /**
  * get_endianness - gets the endianess
@@ -7,5 +7,7 @@
 int get_endianness(void)
 {
 	int a = 1;
-	return ((char*) &a);
+	char* b = (char*)&a;
+
+	return (*b);
 }
