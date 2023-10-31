@@ -79,7 +79,8 @@ void print_title(const char *str)
 		{
 			while (str[len] != '\0' )
 			{
-				printf("%c", str[len++]);
+				printf("%c", str[len]);
+				len++;
 			}
 		}
 		printf(" ");
