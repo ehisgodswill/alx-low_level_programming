@@ -8,6 +8,7 @@
 
 void check_elf(unsigned char *e_ident);
 void print_magic(unsigned char *e_ident);
+void print_title(const char *str);
 void print_class(unsigned char *e_ident);
 void print_data(unsigned char *e_ident);
 void print_version(unsigned char *e_ident);
@@ -30,9 +31,9 @@ void check_elf(unsigned char *e_ident)
 	for (index = 0; index < 4; index++)
 	{
 		if (e_ident[index] != 127 &&
-		    e_ident[index] != 'E' &&
-		    e_ident[index] != 'L' &&
-		    e_ident[index] != 'F')
+			e_ident[index] != 'E' &&
+			e_ident[index] != 'L' &&
+			e_ident[index] != 'F')
 		{
 			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
@@ -64,17 +65,35 @@ void print_magic(unsigned char *e_ident)
 }
 
 /**
+ * print_title - Prints the title of each row
+ * @str: pointer to str
+ */
+void print_title(const char *str)
+{
+	int i = 0;
+
+	printf("  ");
+	while (i < 39)
+	{
+		if (str[i])
+		{
+			printf("%c", str[i]);
+		}
+		else
+		{
+			printf(" ");
+		}
+	}
+}
+
+/**
  * print_class - Prints the class of an ELF header.
  * @e_ident: A pointer to an array containing the ELF class.
  */
 void print_class(unsigned char *e_ident)
 {
-	int i = 0;
 
-	printf("  Class:");
-	while (i++ < 30)
-		printf(" ");
-
+	print_title("Class:");
 	switch (e_ident[EI_CLASS])
 	{
 	case ELFCLASSNONE:
@@ -117,12 +136,12 @@ void print_data(unsigned char *e_ident)
 
 /**
  * print_version - Prints the version of an ELF header.
- * @e_ident: A pointer to an array containing the ELF version.    
+ * @e_ident: A pointer to an array containing the ELF version.
  */
 void print_version(unsigned char *e_ident)
 {
-	 printf(" Version: %d",
-			  e_ident[EI_VERSION]);
+	printf(" Version: %d",
+		   e_ident[EI_VERSION]);
 
 	switch (e_ident[EI_VERSION])
 	{
@@ -187,7 +206,7 @@ void print_osabi(unsigned char *e_ident)
 void print_abi(unsigned char *e_ident)
 {
 	printf(" ABI Version: \t\t\t\t%d\n",
-		e_ident[EI_ABIVERSION]);
+		   e_ident[EI_ABIVERSION]);
 }
 
 /**
@@ -236,7 +255,7 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
 		e_entry = ((e_entry << 8) & 0xFF00FF00) |
-			  ((e_entry >> 8) & 0xFF00FF);
+				  ((e_entry >> 8) & 0xFF00FF);
 		e_entry = (e_entry << 16) | (e_entry >> 16);
 	}
 
@@ -258,7 +277,7 @@ void close_elf(int elf)
 	if (close(elf) == -1)
 	{
 		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %d\n", elf);
+				"Error: Can't close fd %d\n", elf);
 		exit(98);
 	}
 }
