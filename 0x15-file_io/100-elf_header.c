@@ -69,9 +69,11 @@ void print_magic(unsigned char *e_ident)
  */
 void print_class(unsigned char *e_ident)
 {
+	int i = 0;
+
 	printf("  Class:");
-	for (int i = 0; i < 30; i++)
-		printf(' ');
+	while (i++ < 30)
+		printf(" ");
 
 	switch (e_ident[EI_CLASS])
 	{
