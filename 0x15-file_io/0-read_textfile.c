@@ -1,5 +1,6 @@
 #include "main.h"
-#include <stdblib.h>
+#include <stdlib.h>
+#include <stdlib.h>
 
 /**
  * read_textfile- Read a text file and print to STDOUT.
@@ -13,14 +14,26 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t wrt, fd, rs;
 	char *bfr;
 
-	fd = open(filename, O_RDONLY);
+	if (filename == NULL)
+		return (0);
 
+
+	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
+
 	bfr = malloc(sizeof(char) * letters);
+	if (bfr == NULL)
+		return (0);
+
 	rs = read(fd, bfr, letters);
 	wrt = write(STDOUT_FILENO, bfr, rs);
 
+	if (fd == -1 || rs == -1 || wrt == -1 || wrt != rs)
+		{
+			free(bfr);
+			return (0);
+		}
 	free(bfr);
 	close(fd);
 	return (wrt);
