@@ -152,7 +152,7 @@ void print_class_data(unsigned char *e_ident)
  */
 void print_abi_osabi(unsigned char *e_ident)
 {
-	print_title(" OS/ABI:");
+	print_title("OS/ABI:");
 
 	switch (e_ident[EI_OSABI])
 	{
