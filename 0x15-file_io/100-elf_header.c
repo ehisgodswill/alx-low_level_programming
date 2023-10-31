@@ -77,7 +77,7 @@ void print_title(const char *str)
 	{
 		if (str[i])
 		{
-			printf("%c", str[i]);
+			printf("%c", str[i++]);
 		}
 		else
 		{
