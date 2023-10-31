@@ -73,7 +73,7 @@ void print_title(const char *str)
 	int i = 0, len=0;
 
 	printf("  ");
-	do
+	while (i < 39)
 	{
 		if (len == 0)
 		{
@@ -85,7 +85,7 @@ void print_title(const char *str)
 		}
 		printf(" ");
 		i++;
-	}while (i < 39)
+	}
 }
 
 /**
