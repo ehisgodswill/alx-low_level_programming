@@ -114,7 +114,7 @@ void print_class_data(unsigned char *e_ident)
 	default:
 		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
-	
+
 	/**
 	 * print_data - Prints the data of an ELF header.
 	 */
@@ -323,8 +323,7 @@ void print_class_data(unsigned char *e_ident)
 		check_elf(header->e_ident);
 		printf("ELF Header:\n");
 		print_magic(header->e_ident);
-		print_class(header->e_ident);
-		print_data(header->e_ident);
+		print_class_data(header->e_ident);
 		print_version(header->e_ident);
 		print_osabi(header->e_ident);
 		print_abi(header->e_ident);
