@@ -50,7 +50,7 @@ void print_magic(unsigned char *e_ident)
 {
 	int index;
 
-	printf("\tMagic:\t");
+	printf("  Magic:\t");
 
 	for (index = 0; index < EI_NIDENT; index++)
 	{
