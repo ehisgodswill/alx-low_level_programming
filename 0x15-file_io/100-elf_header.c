@@ -75,12 +75,12 @@ void print_title(const char *str)
 	printf("  ");
 	while (i < 39)
 	{
-		while (str[i] && str[i] != '/0' )
+		if (str[i] && str[i] != '/0' )
 		{
-			printf("%c", str[i]);
+			printf("%c", str[i++]);
 		}
-		printf("%d", i);
-		i++;
+		else
+			printf("%d", i++);
 	}
 }
 
