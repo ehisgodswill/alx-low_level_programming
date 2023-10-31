@@ -83,7 +83,8 @@ void print_title(const char *str)
 			}
 		}
 		printf(" ");
-	}while (i++ < 39)
+		i++;
+	}while (i < 39)
 }
 
 /**
