@@ -81,7 +81,7 @@ void print_title(const char *str)
 		}
 		else
 		{
-			printf("%c", ' ');
+			printf("%d", i);
 		}
 		i++;
 	}
