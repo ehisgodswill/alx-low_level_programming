@@ -84,7 +84,7 @@ void print_title(const char *str)
 			printf(" ");
 			i++;
 		}
-		printf('End %d', i);
+		printf("End %", i);
 	}
 }
 
