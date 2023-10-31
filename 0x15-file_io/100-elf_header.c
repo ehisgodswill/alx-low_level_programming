@@ -75,9 +75,8 @@ void print_title(const char *str)
 	printf("  ");
 	while (i < 39)
 	{
-		
 		printf(" ");
-		i++
+		i++;
 	}
 }
 
