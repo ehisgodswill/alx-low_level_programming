@@ -50,7 +50,7 @@ void print_magic(unsigned char *e_ident)
 {
 	int index;
 
-	printf(" Magic: ");
+	printf(" Magic:\t");
 
 	for (index = 0; index < EI_NIDENT; index++)
 	{
@@ -93,7 +93,7 @@ void print_class(unsigned char *e_ident)
  */
 void print_data(unsigned char *e_ident)
 {
-	printf(" Data: ");
+	printf(" Data: \t\t\t\t");
 
 	switch (e_ident[EI_DATA])
 	{
@@ -137,7 +137,7 @@ void print_version(unsigned char *e_ident)
  */
 void print_osabi(unsigned char *e_ident)
 {
-	printf(" OS/ABI: ");
+	printf(" OS/ABI: \t\t\t\t");
 
 	switch (e_ident[EI_OSABI])
 	{
@@ -182,7 +182,7 @@ void print_osabi(unsigned char *e_ident)
  */
 void print_abi(unsigned char *e_ident)
 {
-	printf(" ABI Version: %d\n",
+	printf(" ABI Version: \t\t\t\t%d\n",
 		e_ident[EI_ABIVERSION]);
 }
 
