@@ -70,21 +70,19 @@ void print_magic(unsigned char *e_ident)
  */
 void print_title(const char *str)
 {
-	int i = 0;
+	int i = 0, len=0;
 
 	printf("  ");
 	while (i < 39)
 	{
-		if (str[i] && str[i] != '\0' )
-		{
-			printf("%c", str[i++]);
-		}
-		else
+		if (len > 0)
 		{
 			printf(" ");
-			i++;
 		}
-		printf("End %d", i);
+		while (str[len] != '\0' )
+		{
+			printf("%c", str[len++]);
+		}
 	}
 }
 
