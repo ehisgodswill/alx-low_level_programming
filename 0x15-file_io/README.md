@@ -9,7 +9,7 @@ returns the actual number of letters it could read and print
 if the file can not be opened or read, return 0
 if filename is NULL return 0
 if write fails or does not write the expected amount of bytes, return 0
-julien@ubuntu:~/0x15. File descriptors and permissions$ cat Requiescat 
+julien@ubuntu:~/0x15. File descriptors and permissions$ cat Requiescat
 Requiescat
 by Oscar Wilde
 
@@ -49,21 +49,21 @@ julien@ubuntu:~/0x15. File descriptors and permissions$ cat 0-main.c
  */
 int main(int ac, char **av)
 {
-    ssize_t n;
+		ssize_t n;
 
-    if (ac != 2)
-    {
-        dprintf(2, "Usage: %s filename\n", av[0]);
-        exit(1);
-    }
-    n = read_textfile(av[1], 114);
-    printf("\n(printed chars: %li)\n", n);
-    n = read_textfile(av[1], 1024);
-    printf("\n(printed chars: %li)\n", n);
-    return (0);
+		if (ac != 2)
+		{
+				dprintf(2, "Usage: %s filename\n", av[0]);
+				exit(1);
+		}
+		n = read_textfile(av[1], 114);
+		printf("\n(printed chars: %li)\n", n);
+		n = read_textfile(av[1], 1024);
+		printf("\n(printed chars: %li)\n", n);
+		return (0);
 }
 julien@ubuntu:~/0x15. File descriptors and permissions$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-main.c 0-read_textfile.c -o a
-julien@ubuntu:~/0x15. File descriptors and permissions$ ./a Requiescat 
+julien@ubuntu:~/0x15. File descriptors and permissions$ ./a Requiescat
 Requiescat
 by Oscar Wilde
 
@@ -101,13 +101,13 @@ All my life's buried here,
 Heap earth upon it.
 
 (printed chars: 468)
-julien@ubuntu:~/0x15. File descriptors and permissions$ 
+julien@ubuntu:~/0x15. File descriptors and permissions$
 Repo:
 
 GitHub repository: alx-low_level_programming
 Directory: 0x15-file_io
 File: 0-read_textfile.c
-   
+
 1. Under the snow
 mandatory
 Create a function that creates a file.
@@ -131,30 +131,30 @@ julien@ubuntu:~/0x15. File descriptors and permissions$ cat 1-main.c
  */
 int main(int ac, char **av)
 {
-    int res;
+		int res;
 
-    if (ac != 3)
-    {
-        dprintf(2, "Usage: %s filename text\n", av[0]);
-        exit(1);
-    }
-    res = create_file(av[1], av[2]);
-    printf("-> %i)\n", res);
-    return (0);
+		if (ac != 3)
+		{
+				dprintf(2, "Usage: %s filename text\n", av[0]);
+				exit(1);
+		}
+		res = create_file(av[1], av[2]);
+		printf("-> %i)\n", res);
+		return (0);
 }
 julien@ubuntu:~/0x15. File descriptors and permissions$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-main.c 1-create_file.c -o b
 julien@ubuntu:~/0x15. File descriptors and permissions$ ./b hello world
 -> 1)
 julien@ubuntu:~/0x15. File descriptors and permissions$ ls -l hello
 -rw------- 1 julien julien 5 Dec  3 14:28 hello
-julien@ubuntu:~/0x15. File descriptors and permissions$ cat hello 
-worldjulien@ubuntu:~/0x15. File descriptors and permis$ 
+julien@ubuntu:~/0x15. File descriptors and permissions$ cat hello
+worldjulien@ubuntu:~/0x15. File descriptors and permis$
 Repo:
 
 GitHub repository: alx-low_level_programming
 Directory: 0x15-file_io
 File: 1-create_file.c
-   
+
 2. Speak gently, she can hear
 mandatory
 Write a function that appends text at the end of a file.
@@ -177,16 +177,16 @@ julien@ubuntu:~/0x15. File descriptors and permissions$ cat 2-main.c
  */
 int main(int ac, char **av)
 {
-    int res;
+		int res;
 
-    if (ac != 3)
-    {
-        dprintf(2, "Usage: %s filename text\n", av[0]);
-        exit(1);
-    }
-    res = append_text_to_file(av[1], av[2]);
-    printf("-> %i)\n", res);
-    return (0);
+		if (ac != 3)
+		{
+				dprintf(2, "Usage: %s filename text\n", av[0]);
+				exit(1);
+		}
+		res = append_text_to_file(av[1], av[2]);
+		printf("-> %i)\n", res);
+		return (0);
 }
 julien@ubuntu:~/0x15. File descriptors and permissions$ echo -n Hello > hello
 julien@ubuntu:~/0x15. File descriptors and permissions$ ls -l hello
@@ -195,7 +195,7 @@ julien@ubuntu:~/0x15. File descriptors and permissions$ gcc -Wall -pedantic -Wer
 julien@ubuntu:~/0x15. File descriptors and permissions$ ./c hello " World!
 > "
 -> 1)
-julien@ubuntu:~/0x15. File descriptors and permissions$ cat hello 
+julien@ubuntu:~/0x15. File descriptors and permissions$ cat hello
 Hello World!
 julien@ubuntu:~/0x15. File descriptors and permissions$
 Repo:
@@ -203,7 +203,7 @@ Repo:
 GitHub repository: alx-low_level_programming
 Directory: 0x15-file_io
 File: 2-append_text_to_file.c
-   
+
 3. cp
 mandatory
 Write a program that copies the content of a file to another file.
@@ -221,26 +221,26 @@ Permissions of the created file: rw-rw-r--. If the file already exists, do not c
 You must read 1,024 bytes at a time from the file_from to make less system calls. Use a buffer
 You are allowed to use dprintf
 julien@ubuntu:~/0x15. File descriptors and permissions$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-cp.c -o cp
-julien@ubuntu:~/0x15. File descriptors and permissions$ cat incitatous 
+julien@ubuntu:~/0x15. File descriptors and permissions$ cat incitatous
 Why you should think twice before putting pictures on social media.
 (What you always wanted to know about @Incitatous)
 #PrivacyAware
 http://imgur.com/a/Mq1tc
 julien@ubuntu:~/0x15. File descriptors and permissions$ ./cp incitatous Incitatous
-julien@ubuntu:~/0x15. File descriptors and permissions$ ls -l Incitatous 
+julien@ubuntu:~/0x15. File descriptors and permissions$ ls -l Incitatous
 -rw-rw-r-- 1 julien julien 158 Dec  3 15:39 Incitatous
-julien@ubuntu:~/0x15. File descriptors and permissions$ cat Incitatous 
+julien@ubuntu:~/0x15. File descriptors and permissions$ cat Incitatous
 Why you should think twice before putting pictures on social media.
 (What you always wanted to know about @Incitatous)
 #PrivacyAware
 http://imgur.com/a/Mq1tc
-julien@ubuntu:~/0x15. File descriptors and permissions$ 
+julien@ubuntu:~/0x15. File descriptors and permissions$
 Repo:
 
 GitHub repository: alx-low_level_programming
 Directory: 0x15-file_io
 File: 3-cp.c
-   
+
 4. elf
 #advanced
 Write a program that displays the information contained in the ELF header at the start of an ELF file.
@@ -264,114 +264,114 @@ You are allowed to use printf
 man elf, readelf
 
 julien@ubuntu:~/0x15. File descriptors and permissions$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 100-elf_header.c -o elf_header
-julien@ubuntu:~/0x15. File descriptors and permissions$ ./elf_header ubuntu64 
+julien@ubuntu:~/0x15. File descriptors and permissions$ ./elf_header ubuntu64
 ELF Header:
-  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00
-  Class:                             ELF64
-  Data:                              2's complement, little endian
-  Version:                           1 (current)
-  OS/ABI:                            UNIX - System V
-  ABI Version:                       0
-  Type:                              EXEC (Executable file)
-  Entry point address:               0x400600
+	Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00
+	Class:                             ELF64
+	Data:                              2's complement, little endian
+	Version:                           1 (current)
+	OS/ABI:                            UNIX - System V
+	ABI Version:                       0
+	Type:                              EXEC (Executable file)
+	Entry point address:               0x400600
 julien@ubuntu:~/0x15. File descriptors and permissions$ readelf --version
 GNU readelf (GNU Binutils for Ubuntu) 2.26.1
 Copyright (C) 2015 Free Software Foundation, Inc.
 This program is free software; you may redistribute it under the terms of
 the GNU General Public License version 3 or (at your option) any later version.
 This program has absolutely no warranty.
-julien@ubuntu:~/0x15. File descriptors and permissions$ readelf -h ubuntu64 
+julien@ubuntu:~/0x15. File descriptors and permissions$ readelf -h ubuntu64
 ELF Header:
-  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
-  Class:                             ELF64
-  Data:                              2's complement, little endian
-  Version:                           1 (current)
-  OS/ABI:                            UNIX - System V
-  ABI Version:                       0
-  Type:                              EXEC (Executable file)
-  Machine:                           Advanced Micro Devices X86-64
-  Version:                           0x1
-  Entry point address:               0x400600
-  Start of program headers:          64 (bytes into file)
-  Start of section headers:          6936 (bytes into file)
-  Flags:                             0x0
-  Size of this header:               64 (bytes)
-  Size of program headers:           56 (bytes)
-  Number of program headers:         9
-  Size of section headers:           64 (bytes)
-  Number of section headers:         31
-  Section header string table index: 28
+	Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00
+	Class:                             ELF64
+	Data:                              2's complement, little endian
+	Version:                           1 (current)
+	OS/ABI:                            UNIX - System V
+	ABI Version:                       0
+	Type:                              EXEC (Executable file)
+	Machine:                           Advanced Micro Devices X86-64
+	Version:                           0x1
+	Entry point address:               0x400600
+	Start of program headers:          64 (bytes into file)
+	Start of section headers:          6936 (bytes into file)
+	Flags:                             0x0
+	Size of this header:               64 (bytes)
+	Size of program headers:           56 (bytes)
+	Number of program headers:         9
+	Size of section headers:           64 (bytes)
+	Number of section headers:         31
+	Section header string table index: 28
 julien@ubuntu:~/0x15. File descriptors and permissions$ ./elf_header /lib/ld-linux.so.2
 ELF Header:
-  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00
-  Class:                             ELF32
-  Data:                              2's complement, little endian
-  Version:                           1 (current)
-  OS/ABI:                            UNIX - System V
-  ABI Version:                       0
-  Type:                              DYN (Shared object file)
-  Entry point address:               0xac0
+	Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00
+	Class:                             ELF32
+	Data:                              2's complement, little endian
+	Version:                           1 (current)
+	OS/ABI:                            UNIX - System V
+	ABI Version:                       0
+	Type:                              DYN (Shared object file)
+	Entry point address:               0xac0
 julien@ubuntu:~/0x15. File descriptors and permissions$ readelf -h /lib/ld-linux.so.2
 ELF Header:
-  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
-  Class:                             ELF32
-  Data:                              2's complement, little endian
-  Version:                           1 (current)
-  OS/ABI:                            UNIX - System V
-  ABI Version:                       0
-  Type:                              DYN (Shared object file)
-  Machine:                           Intel 80386
-  Version:                           0x1
-  Entry point address:               0xac0
-  Start of program headers:          52 (bytes into file)
-  Start of section headers:          145756 (bytes into file)
-  Flags:                             0x0
-  Size of this header:               52 (bytes)
-  Size of program headers:           32 (bytes)
-  Number of program headers:         7
-  Size of section headers:           40 (bytes)
-  Number of section headers:         24
-  Section header string table index: 23
-julien@ubuntu:~/0x15. File descriptors and permissions$ ./elf_header netbsd32 
+	Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00
+	Class:                             ELF32
+	Data:                              2's complement, little endian
+	Version:                           1 (current)
+	OS/ABI:                            UNIX - System V
+	ABI Version:                       0
+	Type:                              DYN (Shared object file)
+	Machine:                           Intel 80386
+	Version:                           0x1
+	Entry point address:               0xac0
+	Start of program headers:          52 (bytes into file)
+	Start of section headers:          145756 (bytes into file)
+	Flags:                             0x0
+	Size of this header:               52 (bytes)
+	Size of program headers:           32 (bytes)
+	Number of program headers:         7
+	Size of section headers:           40 (bytes)
+	Number of section headers:         24
+	Section header string table index: 23
+julien@ubuntu:~/0x15. File descriptors and permissions$ ./elf_header netbsd32
 ELF Header:
-  Magic:   7f 45 4c 46 01 01 01 02 00 00 00 00 00 00 00 00
-  Class:                             ELF32
-  Data:                              2's complement, little endian
-  Version:                           1 (current)
-  OS/ABI:                            UNIX - NetBSD
-  ABI Version:                       0
-  Type:                              EXEC (Executable file)
-  Entry point address:               0x80484c0
-julien@ubuntu:~/0x15. File descriptors and permissions$ ./elf_header sortix32 
+	Magic:   7f 45 4c 46 01 01 01 02 00 00 00 00 00 00 00 00
+	Class:                             ELF32
+	Data:                              2's complement, little endian
+	Version:                           1 (current)
+	OS/ABI:                            UNIX - NetBSD
+	ABI Version:                       0
+	Type:                              EXEC (Executable file)
+	Entry point address:               0x80484c0
+julien@ubuntu:~/0x15. File descriptors and permissions$ ./elf_header sortix32
 ELF Header:
-  Magic:   7f 45 4c 46 01 01 01 53 00 00 00 00 00 00 00 00
-  Class:                             ELF32
-  Data:                              2's complement, little endian
-  Version:                           1 (current)
-  OS/ABI:                            <unknown: 53>
-  ABI Version:                       0
-  Type:                              EXEC (Executable file)
-  Entry point address:               0x80484c0
-julien@ubuntu:~/0x15. File descriptors and permissions$ ./elf_header solaris32 
+	Magic:   7f 45 4c 46 01 01 01 53 00 00 00 00 00 00 00 00
+	Class:                             ELF32
+	Data:                              2's complement, little endian
+	Version:                           1 (current)
+	OS/ABI:                            <unknown: 53>
+	ABI Version:                       0
+	Type:                              EXEC (Executable file)
+	Entry point address:               0x80484c0
+julien@ubuntu:~/0x15. File descriptors and permissions$ ./elf_header solaris32
 ELF Header:
-  Magic:   7f 45 4c 46 01 01 01 06 01 00 00 00 00 00 00 00
-  Class:                             ELF32
-  Data:                              2's complement, little endian
-  Version:                           1 (current)
-  OS/ABI:                            UNIX - Solaris
-  ABI Version:                       1
-  Type:                              EXEC (Executable file)
-  Entry point address:               0x8052400
-julien@ubuntu:~/0x15. File descriptors and permissions$ ./elf_header sparc32 
+	Magic:   7f 45 4c 46 01 01 01 06 01 00 00 00 00 00 00 00
+	Class:                             ELF32
+	Data:                              2's complement, little endian
+	Version:                           1 (current)
+	OS/ABI:                            UNIX - Solaris
+	ABI Version:                       1
+	Type:                              EXEC (Executable file)
+	Entry point address:               0x8052400
+julien@ubuntu:~/0x15. File descriptors and permissions$ ./elf_header sparc32
 ELF Header:
-  Magic:   7f 45 4c 46 01 02 01 00 00 00 00 00 00 00 00 00
-  Class:                             ELF32
-  Data:                              2's complement, big endian
-  Version:                           1 (current)
-  OS/ABI:                            UNIX - System V
-  ABI Version:                       0
-  Type:                              EXEC (Executable file)
-  Entry point address:               0x10d20
+	Magic:   7f 45 4c 46 01 02 01 00 00 00 00 00 00 00 00 00
+	Class:                             ELF32
+	Data:                              2's complement, big endian
+	Version:                           1 (current)
+	OS/ABI:                            UNIX - System V
+	ABI Version:                       0
+	Type:                              EXEC (Executable file)
+	Entry point address:               0x10d20
 julien@ubuntu:~/0x15. File descriptors and permissions$
 Repo:
 

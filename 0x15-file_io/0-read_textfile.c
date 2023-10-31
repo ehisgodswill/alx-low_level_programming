@@ -30,10 +30,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	wrt = write(STDOUT_FILENO, bfr, rs);
 
 	if (fd == -1 || rs == -1 || wrt == -1 || wrt != rs)
-		{
-			free(bfr);
-			return (0);
-		}
+	{
+		free(bfr);
+		return (0);
+	}
 	free(bfr);
 	close(fd);
 	return (wrt);
