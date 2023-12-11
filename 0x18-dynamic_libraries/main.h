@@ -1,6 +1,7 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 #include <stdio.h>
+
 int _putchar(char c);
 int _islower(int c);
 int _isalpha(int c);
@@ -22,13 +23,4 @@ unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 
-/* for read/write buffers */
-#define READ_BUFSIZE 1024
-#define WRITE_BUFSIZE 1024
-#define BUFFLUSH -1
-
-/* Command output */
-#define SUCCESSFUL 1
-#define NEUTRAL 0
-#define FAILURE -1
 #endif

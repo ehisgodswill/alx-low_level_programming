@@ -1,19 +1,22 @@
 #include "main.h"
 
 /**
- *_abs - Check Description
- * @r: An integre input
- * Description: This function returns absolute value of a number
- * Return: Absolute value of number r
- */
+ * _islower - checks if char is lower
+ * @c: an input char
+ * Description: a function for lower case character
+ * Return: an integer, 1 if true, 0 if false
+*/
 
-int _abs(int r)
+int _islower(int c)
 {
-	int n = r;
+	int i;
 
-	if (n < 0)
-		n *= -1;
-	return (n);
+	for (i = 'a'; i <= 'z'; i++)
+	{
+		if (i == c)
+			return (1);
+	}
+	return (0);
 }
 
 /**

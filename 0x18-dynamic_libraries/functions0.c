@@ -64,7 +64,7 @@ int _strcmp(char *str1, char *str2)
 		str2++;
 	}
 	if (*str1 == *str2)
-		return (NEUTRAL);
+		return (0);
 	else
 		return (*str1 < *str2 ? -1 : 1);
 }

@@ -1,4 +1,21 @@
 #include "main.h"
+#include <unistd.h>
+
+/**
+ *_abs - Check Description
+ * @r: An integre input
+ * Description: This function returns absolute value of a number
+ * Return: Absolute value of number r
+ */
+
+int _abs(int r)
+{
+	int n = r;
+
+	if (n < 0)
+		n *= -1;
+	return (n);
+}
 
 /**
  **_strchr - locates a character in a string
@@ -27,7 +44,7 @@ int _strlen(char *str)
 	int len = 0;
 
 	if (!str)
-		return (NEUTRAL);
+		return (0);
 	while (*str++)
 		len++;
 	return (len);
@@ -42,20 +59,7 @@ int _strlen(char *str)
  */
 int _putchar(char c)
 {
-	static int i;
-	static char buf[WRITE_BUFSIZE];
-	int w;
-
-	if (c == BUFFLUSH || i >= WRITE_BUFSIZE)
-	{
-		w = write(1, buf, i);
-		i = 0;
-	}
-	if (w == FAILURE)
-		return (FAILURE);
-	if (c != BUFFLUSH)
-		buf[i++] = c;
-	return (SUCCESSFUL);
+	return (write(1, &c, 1));
 }
 
 /**
